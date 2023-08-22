@@ -1,0 +1,7 @@
+Step 1> npm init
+ Now Install dependencies
+ a> express
+ b> mongoose
+
+Step 2>
+Crate index.js

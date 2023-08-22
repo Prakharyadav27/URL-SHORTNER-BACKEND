@@ -41,3 +41,28 @@ Step 4> Crete models as url.js in models
         module.exports = URL;
 
 Step 5> Install nonoid
+
+Step 6>
+Create controllers now
+
+        const { nanoid } = require("nanoid");
+        const URL = require("../models/url");
+        const { json } = require("express");
+        async function handleGenrateNewShortUrl(req, res) {
+        const body = req.body;
+        if (!body.url) return res.status(400).json({ err: "URL is req" });
+        const shortID = nanoid(8);
+
+        await URL.create({
+            shortID: shortID,
+            redirectUrl: body.url,
+            visitHistory: [],
+        });
+
+        return res.json({ id: shortID });
+        }
+
+        module.exports = {
+        handleGenrateNewShortUrl,
+        };
+

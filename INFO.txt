@@ -14,3 +14,4 @@ Crate index.js
      `Server Started at Port: ${PORT}`;
     });
 
+Step 3> Create {routes, models, controllers} folders
